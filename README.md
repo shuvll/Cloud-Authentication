@@ -2,17 +2,15 @@
 
 # Overview
 
-{Provide a description the software that you wrote and how it integrates with a Cloud Database.  Describe how to use your program.}
+My software interacts with the database by allowing the user to create folders and upload different kinds of media. The user is able to move items around and organize their storage. It is very similar to Goodle Drive, but doesn't carry all of the same functions.
 
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running, a walkthrough of the code, and a view of the cloud database.}
+The purpose behind this idea is to create something similar to Google Drive. I always loved the idea of storing all my different files somewhere safer than my own computer. I really liked Google Drive and what it offered to me. Because of this, I wanted to create something similar to better understand how everything works, and to see how tough it would be to setup.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Cloud Database
 
-{Describe the cloud database you are using.}
+For this project, I used Google Firebase. I used it because there was linked help in the moduals, and seemed the easiest to understand and use.
 
 {Describe the structure of the database that you created.}
 
@@ -25,8 +23,9 @@
 # Useful Websites
 
 {Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Google Cloud](https://cloud.google.com/docs/authentication/getting-started)
+* [Firebase](https://firebase.google.com/docs/firestore)
+* [W3Schools](https://www.w3schools.com/aws/aws_cloudessentials_cloudcomputing.php)
 
 # Future Work
 
