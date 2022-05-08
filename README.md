@@ -1,22 +1,18 @@
 # Overview
 
-My software interacts with the database by allowing the user to create an account similar to a google account. The user is able then sign into the account, and if it is incorrect, it will be handled properly.
+My software interacts with the database by allowing the user to sign into their google account. Afterwards the user will be able to send messages into a chat.
 
-The purpose behind this idea is to create something similar to Google Drive. I always loved the idea of storing all my different files somewhere safer than my own computer. I really liked Google Drive and what it offered to me. Because of this, I wanted to create something similar to better understand how everything works, and to see how tough it would be to setup.
-
-[Software Demo Video](http://youtube.link.goes.here)
+The purpose behind this idea is to create a chat that can be accessed if you sign into a google account. I wanted to make a chat that I could use, but I also wanted to implement some authentication in the mix.
 
 # Cloud Database
 
 For this project, I used Google Firebase. I used it because there was linked help in the moduals, and seemed the easiest to understand and use.
 
-{Describe the structure of the database that you created.}
+The majority of my work was in App.css and App.js. The other files were taken care of by React App, which set up 'cloudauthentication.'
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
+I used Javascript primarily, along with some CSS for the main part. I used these languages in combination with Firebase, Firestore, Node, and React App.
 
 # Useful Websites
 
@@ -28,6 +24,5 @@ For this project, I used Google Firebase. I used it because there was linked hel
 # Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* I need to fix how the information is sent to Firebase.
+* I need to implement a 'bad words' filter.
