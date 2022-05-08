@@ -1,3 +1,4 @@
+// Importing everything from react app and firebase.
 import React, { useRef, useState } from 'react';
 import './App.css';
 
@@ -9,6 +10,7 @@ import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
+// Linking my firebase that I created.
 firebase.initializeApp({
   apiKey: "AIzaSyDIbrJnkre_UiOaNTlz7CPKQSTP-yWZtUk",
   authDomain: "cloud-authentication-7921c.firebaseapp.com",
@@ -23,7 +25,7 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
-
+// Start of the app, displaying either the chat room or the sign in button. It will show the sign in button if the user is not signed in, otherwise, it will show the chatroom.
 function App() {
 
   const [user] = useAuthState(auth);
@@ -43,6 +45,7 @@ function App() {
   );
 }
 
+// Handles sign in with the google authentication with Firebase. Sends a message about the guidelines of the chat.
 function SignIn() {
 
   const signInWithGoogle = () => {
@@ -53,20 +56,23 @@ function SignIn() {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the guidelines. Failure to do so will result in a ban.</p>
+      <p>Do not violate the community guidelines. Failure to do so will result in a ban.</p>
     </>
   )
 
 }
 
+
+// Handles sign out if the user clicks on sign out.
 function SignOut() {
   return auth.currentUser && (
     <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
 
+// Handles the interactions with the chatroom, including autoscrolling when a message is sent.
 function ChatRoom() {
-  const dummy = useRef();
+  const scroll = useRef();
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
 
@@ -87,7 +93,7 @@ function ChatRoom() {
     })
 
     setFormValue('');
-    dummy.current.scrollIntoView({ behavior: 'smooth' });
+    scroll.current.scrollIntoView({ behavior: 'smooth' });
   }
 
   return (<>
@@ -95,7 +101,7 @@ function ChatRoom() {
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 
-      <span ref={dummy}></span>
+      <span ref={scroll}></span>
 
     </main>
 
@@ -109,6 +115,7 @@ function ChatRoom() {
   </>)
 }
 
+// Describes if a message has been sent.
 function ChatMessage(props) {
   const { text, uid, photoURL } = props.message;
 
