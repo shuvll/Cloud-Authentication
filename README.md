@@ -1,8 +1,6 @@
-# Cloud-Database
-
 # Overview
 
-My software interacts with the database by allowing the user to create folders and upload different kinds of media. The user is able to move items around and organize their storage. It is very similar to Goodle Drive, but doesn't carry all of the same functions.
+My software interacts with the database by allowing the user to create an account similar to a google account. The user is able then sign into the account, and if it is incorrect, it will be handled properly.
 
 The purpose behind this idea is to create something similar to Google Drive. I always loved the idea of storing all my different files somewhere safer than my own computer. I really liked Google Drive and what it offered to me. Because of this, I wanted to create something similar to better understand how everything works, and to see how tough it would be to setup.
 
