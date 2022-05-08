@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
 
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>⚛️🔥💬</h1>
+        <h1>🙂🔥💬</h1>
         <SignOut />
       </header>
 
@@ -53,7 +53,7 @@ function SignIn() {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
+      <p>Do not violate the guidelines. Failure to do so will result in a ban.</p>
     </>
   )
 
@@ -65,7 +65,6 @@ function SignOut() {
   )
 }
 
-
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
@@ -74,7 +73,6 @@ function ChatRoom() {
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
-
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -105,12 +103,11 @@ function ChatRoom() {
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
 
-      <button type="submit" disabled={!formValue}>🕊️</button>
+      <button type="submit" disabled={!formValue}>📄📨</button>
 
     </form>
   </>)
 }
-
 
 function ChatMessage(props) {
   const { text, uid, photoURL } = props.message;
@@ -124,6 +121,5 @@ function ChatMessage(props) {
     </div>
   </>)
 }
-
 
 export default App;
